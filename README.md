@@ -1,1 +1,0 @@
-# mvm1914_reactnative
