@@ -5,24 +5,33 @@ import Colors from "./Colors";
 const transparent = "rgba(0,0,0,0.0)";
 
 export default {
-    headerStyle: {
+    transparentView: {
+        backgroundColor: transparent
+    } as ViewStyle,
+    dot: {
         light: {
-            borderWidth: 0.5,
-            borderTopWidth: 1,
-            height: 200,
-            backgroundColor: Colors.light.light,
-            borderBottomLeftRadius: 40,
-            borderBottomRightRadius: 40,
-            borderColor: Colors.dark.background
+            justifyContent: "center", 
+            alignItems: "center", 
+            backgroundColor: transparent
         } as ViewStyle,
         dark: {
-            borderWidth: 0.5,
-            borderTopWidth: 1,
-            height: 200,
+            justifyContent: "center", 
+            alignItems: "center", 
+            backgroundColor: transparent
+        } as ViewStyle,
+    },
+    headerStyle: {
+        light: {
+            height: 140,
             backgroundColor: Colors.light.light,
-            borderBottomLeftRadius: 40,
-            borderBottomRightRadius: 40,
-            borderColor: Colors.dark.background
+            borderColor: Colors.light.light,
+            shadowOpacity: 0
+        } as ViewStyle,
+        dark: {
+            height: 140,
+            backgroundColor: Colors.light.light,
+            borderColor: Colors.light.light,
+            shadowOpacity: 0
         } as ViewStyle,
     },
     standardText: {
@@ -67,6 +76,38 @@ export default {
             marginVertical: 30,
             height: 1,
             width: '80%',
+        } as ViewStyle,
+    },
+    tabs: {
+        container: {
+            flex: 1,
+        } as ViewStyle,
+        tabBar: {
+            flexDirection: 'row',
+            backgroundColor: Colors.light.light,
+            borderBottomLeftRadius: 40,
+            borderBottomRightRadius: 40,
+            borderColor: Colors.light.background,
+            fontColor: Colors.light.dark,
+            position: 'absolute'
+        } as ViewStyle,
+        tabItemFocused: {
+            color: Colors.light.dark,
+            fontSize: 12,
+            fontFamily: "montserrat-regular",
+            alignItems: 'center',
+            justifyContent: "center",
+            textAlign: 'center',
+            margin: 5,
+            backgroundColor: transparent
+        } as ViewStyle,
+        tabItemNotFocused: {
+            color: Colors.light.grey,
+            textAlign: 'center',
+            fontSize: 12,
+            fontFamily: "montserrat-regular",
+            margin: 5,
+            backgroundColor: transparent
         } as ViewStyle,
     }
 };

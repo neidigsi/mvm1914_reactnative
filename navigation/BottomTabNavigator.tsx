@@ -26,13 +26,10 @@ export default function BottomTabNavigator() {
         inactiveTintColor: Colors[colorScheme].grey,
         showLabel: false,
         style: {
-          borderWidth: 0.5,
-          borderBottomWidth: 1,
-          height: 80,
+          height: 75,
           backgroundColor: Colors[colorScheme].light,
           borderTopLeftRadius: 40,
           borderTopRightRadius: 40,
-          borderColor: Colors[colorScheme].light,
           position: 'absolute'
         },
       }}>
@@ -49,7 +46,7 @@ export default function BottomTabNavigator() {
         options={{
           tabBarIcon: ({ color }) =>
             <View style={{ backgroundColor: Colors[colorScheme].light }}>
-              <Book name="bottombar-posts" color={color} />
+              <Book name="bottombar-posts" color={color} width="18" height="18"  />
               <Text style={{ height: 6 }}></Text>
               <View style={{ justifyContent: "center", alignItems: "center", backgroundColor: Colors[colorScheme].light }}>
                 <FontAwesomeIcon icon={faCircle} size={6} style={{
@@ -71,7 +68,7 @@ export default function BottomTabNavigator() {
         options={{
           tabBarIcon: ({ color }) =>
             <View style={{ backgroundColor: Colors[colorScheme].light }} >
-              <Calendar name="bottombar-events" color={color} />
+              <Calendar name="bottombar-events" color={color} width="18" height="18"  />
               <Text style={{ height: 6 }}></Text>
               <View style={{ justifyContent: "center", alignItems: "center", backgroundColor: Colors[colorScheme].light }}>
                 <FontAwesomeIcon icon={faCircle} size={6} style={{
@@ -94,7 +91,7 @@ export default function BottomTabNavigator() {
         options={{
           tabBarIcon: ({ color }) =>
             <View style={{ backgroundColor: Colors[colorScheme].light }} >
-              <Camera name="bottombar-galleries" color={color} />
+              <Camera name="bottombar-galleries" color={color} width="18" height="18"  />
               <Text style={{ height: 6 }}></Text>
               <View style={{ justifyContent: "center", alignItems: "center", backgroundColor: Colors[colorScheme].light }}>
                 <FontAwesomeIcon icon={faCircle} size={6} style={{

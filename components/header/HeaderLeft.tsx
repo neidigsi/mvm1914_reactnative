@@ -2,7 +2,6 @@ import * as React from 'react';
 import Colors from '../../constants/Colors';
 import useColorScheme from '../../hooks/useColorScheme';
 import { Text, View } from '../Themed';
-import useCachedResources from '../../hooks/useCachedResources';
 
 interface IProps {
   title: String,
