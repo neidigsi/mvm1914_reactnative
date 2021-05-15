@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Camera, Book, Calendar } from "react-native-feather";
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
+import { Camera, Book, Calendar } from "react-native-feather";
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import EventsNavigator from './EventsNavigator';

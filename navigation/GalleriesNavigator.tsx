@@ -5,6 +5,7 @@ import Style from '../constants/Style';
 import useColorScheme from '../hooks/useColorScheme';
 import GalleriesScreen from '../screens/GalleriesScreen';
 import HeaderLeft from '../components/header/HeaderLeft';
+import HeaderRight from '../components/header/HeaderRight';
 import { GalleriesParamList } from '../types';
 
 const GalleriesStack = createStackNavigator<GalleriesParamList>();
@@ -20,6 +21,7 @@ export default function GalleriesNavigator() {
                 options={{
                     headerTitle: "",
                     headerLeft: props => <HeaderLeft {...props} title="Galerie" back={false} />,
+                    headerRight: props => <HeaderRight />,
                     headerStyle: Style.headerStyle[colorScheme],
                 }}
             />
