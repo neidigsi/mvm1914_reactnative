@@ -1,20 +1,16 @@
 import React, { useState } from 'react';
-
-import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
 import { Camera, Book, Calendar } from "react-native-feather";
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import PostsScreen from '../screens/PostsScreen';
-import EventsScreen from '../screens/EventsScreen';
-import GalleriesScreen from '../screens/GalleriesScreen';
-import { BottomTabParamList, EventsParamList, GalleriesParamList, PostsParamList } from '../types';
+import EventsNavigator from './EventsNavigator';
+import PostsNavigator from './PostsNavigator';
+import GalleriesNavigator from './GalleriesNavigator';
+import { BottomTabParamList  } from '../types';
 import { Text, View } from '../components/Themed';
-import { TouchableWithoutFeedback } from 'react-native';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -32,7 +28,7 @@ export default function BottomTabNavigator() {
         style: {
           borderWidth: 0.5,
           borderBottomWidth: 1,
-          height: 90,
+          height: 80,
           backgroundColor: Colors[colorScheme].light,
           borderTopLeftRadius: 40,
           borderTopRightRadius: 40,
@@ -78,13 +74,14 @@ export default function BottomTabNavigator() {
               <Calendar name="bottombar-events" color={color} />
               <Text style={{ height: 6 }}></Text>
               <View style={{ justifyContent: "center", alignItems: "center", backgroundColor: Colors[colorScheme].light }}>
-                 <FontAwesomeIcon icon={faCircle} size={6} style={{
+                <FontAwesomeIcon icon={faCircle} size={6} style={{
                   opacity: tab !== undefined && tab === "events" ? 1 : 0
-                }}/>
+                }} />
               </View>
             </View>,
         }}
       />
+
       <BottomTab.Screen
         name="Galleries"
         component={GalleriesNavigator}
@@ -100,57 +97,13 @@ export default function BottomTabNavigator() {
               <Camera name="bottombar-galleries" color={color} />
               <Text style={{ height: 6 }}></Text>
               <View style={{ justifyContent: "center", alignItems: "center", backgroundColor: Colors[colorScheme].light }}>
-               <FontAwesomeIcon icon={faCircle} size={6} style={{
+                <FontAwesomeIcon icon={faCircle} size={6} style={{
                   opacity: tab !== undefined && tab === "galleries" ? 1 : 0
-                }}/>
+                }} />
               </View>
             </View>
         }}
       />
     </BottomTab.Navigator>
-  );
-}
-
-// Each tab has its own navigation stack, you can read more about this pattern here:
-// https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const PostsStack = createStackNavigator<PostsParamList>();
-
-function PostsNavigator() {
-  return (
-    <PostsStack.Navigator>
-      <PostsStack.Screen
-        name="PostsScreen"
-        component={PostsScreen}
-        options={{ headerTitle: 'Berichte' }}
-      />
-    </PostsStack.Navigator>
-  );
-}
-
-const EventsStack = createStackNavigator<EventsParamList>();
-
-function EventsNavigator() {
-  return (
-    <EventsStack.Navigator>
-      <EventsStack.Screen
-        name="EventsScreen"
-        component={EventsScreen}
-        options={{ headerTitle: 'Veranstaltungen' }}
-      />
-    </EventsStack.Navigator>
-  );
-}
-
-const GalleriesStack = createStackNavigator<GalleriesParamList>();
-
-function GalleriesNavigator() {
-  return (
-    <GalleriesStack.Navigator>
-      <GalleriesStack.Screen
-        name="GalleriesScreen"
-        component={GalleriesScreen}
-        options={{ headerTitle: 'Galerie' }}
-      />
-    </GalleriesStack.Navigator>
   );
 }
