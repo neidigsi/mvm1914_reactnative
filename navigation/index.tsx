@@ -14,10 +14,17 @@ import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
-  return (
+  /*return (
     <NavigationContainer
       linking={LinkingConfiguration}
       theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <RootNavigator />
+    </NavigationContainer>
+  );*/
+  return (
+    <NavigationContainer
+      linking={LinkingConfiguration}
+      theme={DefaultTheme}>
       <RootNavigator />
     </NavigationContainer>
   );

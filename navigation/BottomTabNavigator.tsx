@@ -1,78 +1,156 @@
-/**
- * Learn more about createBottomTabNavigator:
- * https://reactnavigation.org/docs/bottom-tab-navigator
- */
+import React, { useState } from 'react';
 
 import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import * as React from 'react';
+import { Camera, Book, Calendar } from "react-native-feather";
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import PostsScreen from '../screens/PostsScreen';
+import EventsScreen from '../screens/EventsScreen';
+import GalleriesScreen from '../screens/GalleriesScreen';
+import { BottomTabParamList, EventsParamList, GalleriesParamList, PostsParamList } from '../types';
+import { Text, View } from '../components/Themed';
+import { TouchableWithoutFeedback } from 'react-native';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
+  const [tab, setTab] = useState("posts");
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
+      initialRouteName="Posts"
+      tabBarOptions={{
+        activeTintColor: Colors[colorScheme].dark,
+        inactiveTintColor: Colors[colorScheme].grey,
+        showLabel: false,
+        style: {
+          borderWidth: 0.5,
+          borderBottomWidth: 1,
+          height: 90,
+          backgroundColor: Colors[colorScheme].light,
+          borderTopLeftRadius: 40,
+          borderTopRightRadius: 40,
+          borderColor: Colors[colorScheme].light,
+          position: 'absolute'
+        },
+      }}>
+
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneNavigator}
+        name="Posts"
+        component={PostsNavigator}
+        listeners={({ navigation }) => ({
+          tabPress: (e) => {
+            setTab("posts");
+            navigation.navigate("Posts");
+          },
+        })}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) =>
+            <View style={{ backgroundColor: Colors[colorScheme].light }}>
+              <Book name="bottombar-posts" color={color} />
+              <Text style={{ height: 6 }}></Text>
+              <View style={{ justifyContent: "center", alignItems: "center", backgroundColor: Colors[colorScheme].light }}>
+                <FontAwesomeIcon icon={faCircle} size={6} style={{
+                  opacity: tab !== undefined && tab === "posts" ? 1 : 0
+                }} />
+              </View>
+            </View>,
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoNavigator}
+        name="Events"
+        component={EventsNavigator}
+        listeners={({ navigation }) => ({
+          tabPress: (e) => {
+            setTab("events");
+            navigation.navigate("Events");
+          },
+        })}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) =>
+            <View style={{ backgroundColor: Colors[colorScheme].light }} >
+              <Calendar name="bottombar-events" color={color} />
+              <Text style={{ height: 6 }}></Text>
+              <View style={{ justifyContent: "center", alignItems: "center", backgroundColor: Colors[colorScheme].light }}>
+                 <FontAwesomeIcon icon={faCircle} size={6} style={{
+                  opacity: tab !== undefined && tab === "events" ? 1 : 0
+                }}/>
+              </View>
+            </View>,
+        }}
+      />
+      <BottomTab.Screen
+        name="Galleries"
+        component={GalleriesNavigator}
+        listeners={({ navigation }) => ({
+          tabPress: (e) => {
+            setTab("galleries");
+            navigation.navigate("Galleries");
+          },
+        })}
+        options={{
+          tabBarIcon: ({ color }) =>
+            <View style={{ backgroundColor: Colors[colorScheme].light }} >
+              <Camera name="bottombar-galleries" color={color} />
+              <Text style={{ height: 6 }}></Text>
+              <View style={{ justifyContent: "center", alignItems: "center", backgroundColor: Colors[colorScheme].light }}>
+               <FontAwesomeIcon icon={faCircle} size={6} style={{
+                  opacity: tab !== undefined && tab === "galleries" ? 1 : 0
+                }}/>
+              </View>
+            </View>
         }}
       />
     </BottomTab.Navigator>
   );
 }
 
-// You can explore the built-in icon families and icons on the web at:
-// https://icons.expo.fyi/
-function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
-  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
-}
-
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const TabOneStack = createStackNavigator<TabOneParamList>();
+const PostsStack = createStackNavigator<PostsParamList>();
 
-function TabOneNavigator() {
+function PostsNavigator() {
   return (
-    <TabOneStack.Navigator>
-      <TabOneStack.Screen
-        name="TabOneScreen"
-        component={TabOneScreen}
-        options={{ headerTitle: 'Tab One Title' }}
+    <PostsStack.Navigator>
+      <PostsStack.Screen
+        name="PostsScreen"
+        component={PostsScreen}
+        options={{ headerTitle: 'Berichte' }}
       />
-    </TabOneStack.Navigator>
+    </PostsStack.Navigator>
   );
 }
 
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
+const EventsStack = createStackNavigator<EventsParamList>();
 
-function TabTwoNavigator() {
+function EventsNavigator() {
   return (
-    <TabTwoStack.Navigator>
-      <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
+    <EventsStack.Navigator>
+      <EventsStack.Screen
+        name="EventsScreen"
+        component={EventsScreen}
+        options={{ headerTitle: 'Veranstaltungen' }}
       />
-    </TabTwoStack.Navigator>
+    </EventsStack.Navigator>
+  );
+}
+
+const GalleriesStack = createStackNavigator<GalleriesParamList>();
+
+function GalleriesNavigator() {
+  return (
+    <GalleriesStack.Navigator>
+      <GalleriesStack.Screen
+        name="GalleriesScreen"
+        component={GalleriesScreen}
+        options={{ headerTitle: 'Galerie' }}
+      />
+    </GalleriesStack.Navigator>
   );
 }
