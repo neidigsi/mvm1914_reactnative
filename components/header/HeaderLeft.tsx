@@ -11,7 +11,6 @@ interface IProps {
 
 export default function HeaderLeft({ title, back } : IProps) {
   const colorScheme = useColorScheme();
-  const cachedResources = useCachedResources()
 
   return (
     <View style={{

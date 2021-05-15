@@ -1,30 +1,12 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
-
 import { Text, View } from '../components/Themed';
+import Style from '../constants/Style';
 
 export default function PostsScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Posts</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+    <View style={Style.screen.container}>
+      <Text style={Style.screen.title}>Posts</Text>
+      <View style={Style.screen.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
