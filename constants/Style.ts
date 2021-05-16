@@ -81,6 +81,7 @@ export default {
     tabs: {
         container: {
             flex: 1,
+            backgroundColor: Colors.light.background
         } as ViewStyle,
         tabBar: {
             flexDirection: 'row',
@@ -89,8 +90,8 @@ export default {
             borderBottomRightRadius: 40,
             borderColor: Colors.light.background,
             fontColor: Colors.light.dark,
-            position: 'absolute'
-        } as ViewStyle,
+            position: "fixed"
+        } as unknown as ViewStyle,
         tabItemFocused: {
             color: Colors.light.dark,
             fontSize: 12,

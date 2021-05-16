@@ -1,12 +1,85 @@
 import * as React from 'react';
-import { Text, View } from '../components/Themed';
+import { useState } from 'react';
+import { HScrollView } from 'react-native-head-tab-view';
+import { SceneMap } from 'react-native-tab-view';
+import TabLayout from '../components/tabs/TabLayout';
+import { View } from '../components/Themed';
 import Style from '../constants/Style';
 
-export default function EventsScreen() {
+const AllRoute = () => (
+  <HScrollView index={0}>
+    <View style={Style.tabs.container} />
+  </HScrollView>
+);
+
+const GrossesOrchesterRoute = () => (
+  <HScrollView index={1}>
+    <View style={Style.tabs.container} />
+  </HScrollView>
+);
+
+const JugendorchesterRoute = () => (
+  <HScrollView index={2}>
+    <View style={Style.tabs.container} />
+  </HScrollView>
+);
+
+const HorschEmollRoute = () => (
+  <HScrollView index={3}>
+    <View style={Style.tabs.container} />
+  </HScrollView>
+);
+
+const JuniorbandRoute = () => (
+  <HScrollView index={4}>
+    <View style={Style.tabs.container} />
+  </HScrollView>
+);
+
+const FloetengruppeRoute = () => (
+  <HScrollView index={5}>
+    <View style={Style.tabs.container} />
+  </HScrollView>
+);
+
+const FruehfoerderungRoute = () => (
+  <HScrollView index={6}>
+    <View style={Style.tabs.container} />
+  </HScrollView>
+);
+
+const EventsScreen = () => {
+  const [state, setState] = useState({
+    index: 0,
+    routes: [
+      { key: 'all', title: 'Alle' },
+      { key: 'go', title: 'Großes Orchester' },
+      { key: 'jo', title: 'Jugendorchester' },
+      { key: 'hem', title: 'Horsch e-mol(l)' },
+      { key: 'jb', title: 'Juniorband' },
+      { key: 'fg', title: 'Flötengruppe' },
+      { key: 'ff', title: 'Musikalische Frühförderung' },
+    ]
+  });
+
+  const renderScene = SceneMap({
+    all: AllRoute,
+    go: GrossesOrchesterRoute,
+    jo: JugendorchesterRoute,
+    hem: HorschEmollRoute,
+    jb: JuniorbandRoute,
+    fg: FloetengruppeRoute,
+    ff: FruehfoerderungRoute
+  });
+
   return (
-    <View style={Style.screen.container}>
-      <Text style={Style.screen.title}>Events</Text>
-      <View style={Style.screen.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-    </View>
+    <TabLayout
+      title="Veranstaltungen"
+      scene={renderScene}
+      state={state}
+      setState={setState}
+    />
   );
 }
+
+export default EventsScreen;

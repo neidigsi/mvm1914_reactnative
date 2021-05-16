@@ -5,7 +5,7 @@ const secondary = "#093E56"
 const light = "#FFFFFF";
 const dark = "#000000";
 const grey = "#9B9B9B"
-const background = "#E5E5E5";
+const background = "#F2F2F2";
 
 export default {
   light: {
