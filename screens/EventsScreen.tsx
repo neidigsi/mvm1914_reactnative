@@ -58,7 +58,7 @@ const EventsScreen = () => {
       { key: 'hem', title: 'Horsch e-mol(l)' },
       { key: 'jb', title: 'Juniorband' },
       { key: 'fg', title: 'Flötengruppe' },
-      { key: 'ff', title: 'Musikalische Frühförderung' },
+      { key: 'ff', title: 'Frühförderung' },
     ]
   });
 
