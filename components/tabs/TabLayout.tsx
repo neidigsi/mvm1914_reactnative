@@ -1,13 +1,11 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Text, View } from '../../components/Themed';
-import { StyleSheet, Dimensions } from 'react-native';
+import { Dimensions } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import Style from '../../constants/Style';
 import useColorScheme from '../../hooks/useColorScheme';
-import { HScrollView } from 'react-native-head-tab-view'
-
 import { CollapsibleHeaderTabView } from 'react-native-tab-view-collapsible-header'
 import { TabBar } from 'react-native-tab-view';
 import Header from '../header/Header';

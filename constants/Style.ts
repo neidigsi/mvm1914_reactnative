@@ -1,10 +1,53 @@
 
-import { ViewStyle } from "react-native";
+import { ImageStyle, ViewStyle } from "react-native";
 import Colors from "./Colors";
 
 const transparent = "rgba(0,0,0,0.0)";
 
 export default {
+    listItem: {
+        item: {
+            light: {
+                backgroundColor: transparent,
+                height: 225,
+            } as ViewStyle,
+            dark: {
+                backgroundColor: transparent,
+                height: 225,
+            } as ViewStyle,
+        },
+        image: {
+            flex: 1,
+            resizeMode: "cover",
+            justifyContent: "flex-start",
+            backgroundColor: Colors.light.dark,
+            marginTop: 20,
+            marginLeft: 10,
+            marginRight: 10,
+            borderRadius: 30,
+        } as ViewStyle,
+        imageStyle: {
+            opacity: 0.6,
+            borderRadius: 30
+        } as ImageStyle,
+        category: {
+            fontFamily: "montserrat-semibold",
+            fontSize: 14,
+            paddingLeft: 10,
+            paddingRight: 10,
+            paddingTop: 14,
+            paddingBottom: 6,
+            color: Colors.light.primary,
+        } as ViewStyle,
+        title: {
+            fontFamily: "montserrat-semibold",
+            fontSize: 23,
+            paddingLeft: 10,
+            paddingRight: 10,
+            color: Colors.light.light,
+        } as ViewStyle,
+
+    },
     transparentView: {
         backgroundColor: transparent
     } as ViewStyle,
