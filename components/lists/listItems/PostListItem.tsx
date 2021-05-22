@@ -1,33 +1,31 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { View, Text } from '../components/Themed';
-import { SceneMap } from 'react-native-tab-view';
-import { HScrollView } from 'react-native-head-tab-view'
-import TabLayout from '../components/tabs/TabLayout';
-import Style from '../constants/Style';
-import useColorScheme from '../hooks/useColorScheme';
-import { Button, ImageBackground, TouchableOpacity } from 'react-native';
-import Colors from '../constants/Colors';
+import { View, Text } from '../../Themed';
+import Style from '../../../constants/Style';
+import useColorScheme from '../../../hooks/useColorScheme';
+import { ImageBackground, TouchableOpacity } from 'react-native';
 
 const transparent = "rgba(0,0,0,0.0)";
 
-const PostListItem = ({ title, date, categories, author, thumbnailLink }: any) => {
+const PostListItem = ({ key, title, date, categories, author, thumbnailLink }: any) => {
     const colorScheme = useColorScheme();
 
     return (
         <View style={Style.listItem.item[colorScheme]}>
             <ImageBackground
-                source={{ uri: thumbnailLink }}
+                source={{ uri: thumbnailLink.toString() }}
                 style={Style.listItem.image}
                 imageStyle={Style.listItem.imageStyle}>
                 <Text style={Style.listItem.category}>
-                    {categories.join(" | ")}
+                    {categories.filter((c: string) => c === "Jugend" || c === "Großes Orchester" || c === "Horsch e-mol(l)").join(" | ")}
                 </Text>
                 <Text style={Style.listItem.title}>
-                    {title}
+                    {title.length > 90 ?
+                        title.slice(0, 80) + '...' :
+                        title
+                    }
                 </Text>
-                <View style={{ flexDirection: 'row', backgroundColor: transparent }}>
-                    <View style={{ backgroundColor: transparent }}>
+                <View style={{ flexDirection: 'row', backgroundColor: transparent, alignItems: "flex-end", flex: 1, marginBottom: 15 }}>
+                    <View style={{ backgroundColor: transparent, width: "70%" }}>
                         <Text style={Style.listItem.author}>
                             {author}
                         </Text>

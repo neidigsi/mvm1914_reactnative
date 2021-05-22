@@ -1,36 +1,15 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text } from '../components/Themed';
 import { SceneMap } from 'react-native-tab-view';
+import { API } from "@env";
 import TabLayout from '../components/tabs/TabLayout';
 import { HScrollView, HFlatList } from 'react-native-head-tab-view'
 import Style from '../constants/Style'
-import PostListItem from '../components/PostListItem';
+import PostListItem from '../components/lists/listItems/PostListItem';
+import PostList from '../components/lists/tabLists/PostList';
+import { http } from '../networking/HttpRequest';
 
-const renderItem = (itemInfo: { item: any, index: number }) => {
-  const { item, index } = itemInfo
-  return (
-    <PostListItem title={item.title} author={item.author} date={item.date} categories={item.categories} thumbnailLink={item.thumbnailLink} />
-  )
-}
-const AllRoute = () => (
-  <HFlatList
-    index={0}
-    data={[{
-      "id": 3764,
-      "title": "Horsch e-mol(l) horscht und spielt wieder!",
-      "extract": "Nach einer betriebsbedingt längeren Pause trifft sich unser Anfänger- und Wiedereinsteigerorchester Horsch e-mol(l) wieder online zu Rhythmustrainings und Spielproben. In einer ersten Aktion fand ein virtueller Stammtisch statt, um Neuigkeiten aus dem Verein zu ",
-      "date": "2021-05-09 20:16:06",
-      "categories": [
-          "Horsch e-mol(l)",
-          "Probenarbeit"
-      ],
-      "author": "Andrea Gloss",
-      "thumbnailLink": "https://mvm1914.de/wp-content/uploads/2021/05/HEMonline-scaled.jpg"
-  }]}
-    renderItem={renderItem}
-  />
-);
 
 const GrossesOrchesterRoute = () => (
   <HScrollView index={1}>
@@ -50,7 +29,19 @@ const HorschEmollRoute = () => (
   </HScrollView>
 );
 
+interface IPost {
+  id: number;
+  title: string;
+  extract: string;
+  date: string;
+  categories: string[];
+  author: string;
+  thumbnailLink: string;
+}
+
 const PostsScreen = () => {
+  const [posts, setPosts] = useState<IPost[]>([]);
+  const [loading, setLoading] = useState<Boolean>(true);
   const [state, setState] = useState({
     index: 0,
     routes: [
@@ -61,12 +52,33 @@ const PostsScreen = () => {
     ]
   });
 
-  const renderScene = SceneMap({
-    all: AllRoute,
-    go: GrossesOrchesterRoute,
-    j: JugendRoute,
-    hem: HorschEmollRoute
-  });
+  useEffect(() => {
+    const getPosts = async () => {
+      const postsFromServer = await fetchPosts();
+      setPosts(postsFromServer);
+      setLoading(false);
+    }
+    getPosts();
+  }, []);
+
+  // Fetch posts from rest-api
+  const fetchPosts = async () => {
+    const data = await http(`${API}/post`, "GET", {})
+    return data;
+  }
+
+  const renderScene = ({ route, jumpTo }: any) => {
+    switch (route.key) {
+      case "all":
+        return <PostList index={0} posts={posts} loading={loading} />;
+      case "go":
+        return <PostList index={1} posts={posts.filter(post => post.categories.includes("Großes Orchester"))} loading={loading} />;
+      case "j":
+        return <PostList index={2} posts={posts.filter(post => post.categories.includes("Jugend"))} loading={loading} />;
+      case "hem":
+        return <PostList index={3} posts={posts.filter(post => post.categories.includes("Horsch e-mol(l)"))} loading={loading} />;
+    }
+  };
 
   return (
     <TabLayout

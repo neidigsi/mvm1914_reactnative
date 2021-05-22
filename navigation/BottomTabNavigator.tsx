@@ -28,8 +28,8 @@ export default function BottomTabNavigator() {
         style: {
           height: 75,
           backgroundColor: Colors[colorScheme].light,
-          borderTopLeftRadius: 40,
-          borderTopRightRadius: 40,
+          borderTopLeftRadius: 30,
+          borderTopRightRadius: 30,
           position: 'absolute',
           elevation: 0
         },

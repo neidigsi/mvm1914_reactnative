@@ -10,15 +10,16 @@ export default {
             light: {
                 backgroundColor: transparent,
                 height: 225,
+                flex: 1
             } as ViewStyle,
             dark: {
                 backgroundColor: transparent,
                 height: 225,
+                flex: 1
             } as ViewStyle,
         },
         image: {
             flex: 1,
-            resizeMode: "cover",
             justifyContent: "flex-start",
             backgroundColor: Colors.light.dark,
             marginTop: 20,
@@ -27,8 +28,9 @@ export default {
             borderRadius: 30,
         } as ViewStyle,
         button: {
-            marginLeft: 130,
-            marginTop: 60,
+            flex: 1,
+            marginBottom: 0,
+            marginRight: 15,
             paddingTop: 5,
             paddingBottom: 5,
             height: 30,
@@ -45,6 +47,7 @@ export default {
         } as ViewStyle,
         imageStyle: {
             opacity: 0.6,
+            resizeMode: "cover",
             borderRadius: 30
         } as ImageStyle,
         category: {
@@ -67,7 +70,6 @@ export default {
             fontFamily: "montserrat-regular",
             fontSize: 12,
             paddingLeft: 10,
-            paddingTop: 60,
             paddingRight: 10,
             color: Colors.light.light,
         } as ViewStyle,
@@ -84,6 +86,16 @@ export default {
     transparentView: {
         backgroundColor: transparent
     } as ViewStyle,
+    spinnerView: {
+        light: {
+            height: 200,            
+            justifyContent: "flex-end"
+        } as ViewStyle,
+        dark: {
+            height: 200,
+            justifyContent: "flex-end"
+        } as ViewStyle
+    },
     dot: {
         light: {
             justifyContent: "center",
