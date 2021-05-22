@@ -9,6 +9,7 @@ import useColorScheme from '../../hooks/useColorScheme';
 import { CollapsibleHeaderTabView } from 'react-native-tab-view-collapsible-header'
 import { TabBar } from 'react-native-tab-view';
 import Header from '../header/Header';
+import Colors from '../../constants/Colors';
 
 
 const initialLayout = { width: Dimensions.get('window').width };
@@ -27,7 +28,7 @@ const TabLayout = ({ title, scene, state, setState }: any): JSX.Element => {
             <TabBar
                 scrollEnabled={true}
                 style={Style.tabs.tabBar}
-                indicatorStyle={{ opacity: 0 }}
+                indicatorStyle={{ opacity: 0, borderColor: Colors[colorScheme].light }}
                 renderLabel={({ route, focused, color }) => (
                     focused ?
                         <View style={Style.transparentView}>
@@ -60,7 +61,7 @@ const TabLayout = ({ title, scene, state, setState }: any): JSX.Element => {
     return <>{
         state !== undefined && state.routes !== undefined && state.routes.length > 0 &&
         <CollapsibleHeaderTabView
-            renderScrollHeader={() => <Header title={title} back={false} />}
+            renderScrollHeader={() => <Header title={title} back={false}  />}
             navigationState={state}
             renderScene={scene}
             onIndexChange={handleIndexChange}

@@ -1,5 +1,5 @@
 
-import { ImageStyle, ViewStyle } from "react-native";
+import { ImageStyle, ViewStyle, ButtonProps } from "react-native";
 import Colors from "./Colors";
 
 const transparent = "rgba(0,0,0,0.0)";
@@ -26,6 +26,23 @@ export default {
             marginRight: 10,
             borderRadius: 30,
         } as ViewStyle,
+        button: {
+            marginLeft: 130,
+            marginTop: 60,
+            paddingTop: 5,
+            paddingBottom: 5,
+            height: 30,
+            backgroundColor: Colors.light.primary,
+            borderRadius: 15,
+        } as ViewStyle,
+        buttonText: {
+            color: Colors.light.dark,
+            fontFamily: "montserrat-semibold",
+            fontSize: 14,
+            textAlign: 'center',
+            paddingLeft: 13,
+            paddingRight: 13
+        } as ViewStyle,
         imageStyle: {
             opacity: 0.6,
             borderRadius: 30
@@ -46,6 +63,22 @@ export default {
             paddingRight: 10,
             color: Colors.light.light,
         } as ViewStyle,
+        author: {
+            fontFamily: "montserrat-regular",
+            fontSize: 12,
+            paddingLeft: 10,
+            paddingTop: 60,
+            paddingRight: 10,
+            color: Colors.light.light,
+        } as ViewStyle,
+        date: {
+            fontFamily: "montserrat-regular",
+            fontSize: 12,
+            paddingLeft: 10,
+            paddingTop: 2,
+            paddingRight: 10,
+            color: Colors.light.light,
+        } as ViewStyle,
 
     },
     transparentView: {
@@ -53,13 +86,13 @@ export default {
     } as ViewStyle,
     dot: {
         light: {
-            justifyContent: "center", 
-            alignItems: "center", 
+            justifyContent: "center",
+            alignItems: "center",
             backgroundColor: transparent
         } as ViewStyle,
         dark: {
-            justifyContent: "center", 
-            alignItems: "center", 
+            justifyContent: "center",
+            alignItems: "center",
             backgroundColor: transparent
         } as ViewStyle,
     },
@@ -68,13 +101,13 @@ export default {
             height: 140,
             backgroundColor: Colors.light.light,
             borderColor: Colors.light.light,
-            shadowOpacity: 0
+            elevation: 0
         } as ViewStyle,
         dark: {
             height: 140,
             backgroundColor: Colors.light.light,
             borderColor: Colors.light.light,
-            shadowOpacity: 0
+            elevation: 0
         } as ViewStyle,
     },
     standardText: {
@@ -124,15 +157,16 @@ export default {
     tabs: {
         container: {
             flex: 1,
-            backgroundColor: Colors.light.background       
+            backgroundColor: Colors.light.background
         } as ViewStyle,
         tabBar: {
             flexDirection: 'row',
             backgroundColor: Colors.light.light,
-            borderBottomLeftRadius: 40,
-            borderBottomRightRadius: 40,
-            borderColor: Colors.light.background,
+            borderBottomLeftRadius: 30,
+            borderBottomRightRadius: 30,
+            borderColor: Colors.light.light,
             fontColor: Colors.light.dark,
+            elevation: 0
         } as unknown as ViewStyle,
         tabItemFocused: {
             color: Colors.light.dark,

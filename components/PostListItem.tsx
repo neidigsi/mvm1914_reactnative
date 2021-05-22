@@ -6,8 +6,10 @@ import { HScrollView } from 'react-native-head-tab-view'
 import TabLayout from '../components/tabs/TabLayout';
 import Style from '../constants/Style';
 import useColorScheme from '../hooks/useColorScheme';
-import { ImageBackground } from 'react-native';
+import { Button, ImageBackground, TouchableOpacity } from 'react-native';
+import Colors from '../constants/Colors';
 
+const transparent = "rgba(0,0,0,0.0)";
 
 const PostListItem = ({ title, date, categories, author, thumbnailLink }: any) => {
     const colorScheme = useColorScheme();
@@ -24,6 +26,19 @@ const PostListItem = ({ title, date, categories, author, thumbnailLink }: any) =
                 <Text style={Style.listItem.title}>
                     {title}
                 </Text>
+                <View style={{ flexDirection: 'row', backgroundColor: transparent }}>
+                    <View style={{ backgroundColor: transparent }}>
+                        <Text style={Style.listItem.author}>
+                            {author}
+                        </Text>
+                        <Text style={Style.listItem.date}>
+                            {date}
+                        </Text>
+                    </View>
+                    <TouchableOpacity style={Style.listItem.button} >
+                        <Text style={Style.listItem.buttonText}>Ansehen</Text>
+                    </TouchableOpacity>
+                </View>
             </ImageBackground>
         </View>
     );

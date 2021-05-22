@@ -55,12 +55,15 @@ const Header = ({ title, back }: IProps) => {
             alignItems: "flex-start",
             justifyContent: "flex-end",
             backgroundColor: Colors[colorScheme].light,
-            shadowColor: 'transparent'
+            shadowColor: 'transparent',
+            borderColor: Colors[colorScheme].light,
+            shadowOpacity: 0,
         }}>
             <View style={{
                 width: "100%",
                 alignItems: "flex-end",
                 backgroundColor: Colors[colorScheme].light,
+                shadowOpacity: 0
             }}>
                 <TouchableOpacity onPress={onPress}>
                     <Text>
