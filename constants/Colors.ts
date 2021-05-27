@@ -6,6 +6,7 @@ const light = "#FFFFFF";
 const dark = "#000000";
 const grey = "#9B9B9B"
 const background = "#F2F2F2";
+const transparent = "rgba(0,0,0,0.0)";
 
 export default {
   light: {
@@ -18,7 +19,8 @@ export default {
     light: light,
     dark: dark,
     grey: grey,
-    background: background
+    background: background,
+    transparent: transparent
   },
   dark: {
     text: '#fff',
@@ -30,6 +32,7 @@ export default {
     light: light,
     dark: dark,
     grey: grey,
-    background: background
+    background: background,
+    transparent: transparent
   },
 };

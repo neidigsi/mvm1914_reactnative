@@ -6,7 +6,7 @@ import { ImageBackground, TouchableOpacity } from 'react-native';
 
 const transparent = "rgba(0,0,0,0.0)";
 
-const PostListItem = ({ key, title, date, categories, author, thumbnailLink }: any) => {
+const PostListItem = ({ id, navigation, title, date, categories, author, thumbnailLink }: any) => {
     const colorScheme = useColorScheme();
 
     return (
@@ -33,7 +33,7 @@ const PostListItem = ({ key, title, date, categories, author, thumbnailLink }: a
                             {date}
                         </Text>
                     </View>
-                    <TouchableOpacity style={Style.listItem.button} >
+                    <TouchableOpacity style={Style.listItem.button} onPress={() => navigation.navigate("SinglePostScreen", { id: id })} >
                         <Text style={Style.listItem.buttonText}>Ansehen</Text>
                     </TouchableOpacity>
                 </View>

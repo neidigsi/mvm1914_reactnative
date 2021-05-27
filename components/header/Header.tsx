@@ -51,7 +51,7 @@ const Header = ({ title, back }: IProps) => {
 
     return (
         <View style={{
-            height: 200,
+            height: 175,
             alignItems: "flex-start",
             justifyContent: "flex-end",
             backgroundColor: Colors[colorScheme].light,

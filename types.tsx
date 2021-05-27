@@ -16,6 +16,7 @@ export type BottomTabParamList = {
 
 export type PostsParamList = {
   PostsScreen: undefined;
+  SinglePostScreen: undefined;
 };
 
 export type GalleriesParamList = {
