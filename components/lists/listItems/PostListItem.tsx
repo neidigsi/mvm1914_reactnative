@@ -33,7 +33,7 @@ const PostListItem = ({ id, navigation, title, date, categories, author, thumbna
                             {date}
                         </Text>
                     </View>
-                    <TouchableOpacity style={Style.listItem.button} onPress={() => navigation.navigate("SinglePostScreen", { id: id })} >
+                    <TouchableOpacity style={Style.listItem.button} onPress={() => navigation.navigate("SinglePostScreen", { id: id, categories: categories })} >
                         <Text style={Style.listItem.buttonText}>Ansehen</Text>
                     </TouchableOpacity>
                 </View>

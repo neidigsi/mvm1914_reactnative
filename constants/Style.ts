@@ -20,6 +20,8 @@ export default {
                 zIndex: 9999,
                 borderBottomLeftRadius: 30,
                 borderBottomRightRadius: 30,
+                alignItems: "flex-end",
+                justifyContent: "flex-end"
             } as ViewStyle,
             dark: {
                 backgroundColor: Colors.light.light,
@@ -32,28 +34,26 @@ export default {
                 zIndex: 9999,
                 borderBottomLeftRadius: 30,
                 borderBottomRightRadius: 30,
+                alignItems: "flex-end",
+                justifyContent: "flex-end"
             } as ViewStyle,
         },
         smallHeaderText: {
             light: {
-                textAlign: 'center', 
-                fontSize: 18, 
+                textAlign: 'center',
+                fontSize: 18,
+                width: "80%",
                 color: Colors.light.dark,
                 backgroundColor: transparent,
                 fontFamily: "montserrat-semibold",
-                marginTop: 10,
-                marginLeft: 35,
-                marginRight: 35
             } as ViewStyle,
             dark: {
-                textAlign: 'center', 
-                fontSize: 18, 
+                textAlign: 'center',
+                fontSize: 18,
+                width: "80%",
                 color: Colors.light.dark,
                 backgroundColor: transparent,
                 fontFamily: "montserrat-semibold",
-                marginTop: 10,
-                marginLeft: 18,
-                marginRight: 18
             } as ViewStyle,
         },
         smallHeaderBackground: {
@@ -62,34 +62,80 @@ export default {
                 height: 60,
                 borderBottomLeftRadius: 30,
                 borderBottomRightRadius: 30,
+                width: "100%",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
             } as ViewStyle,
             dark: {
                 backgroundColor: Colors.light.light,
                 height: 60,
                 borderBottomLeftRadius: 30,
                 borderBottomRightRadius: 30,
+                alignItems: "center",
+                justifyContent: "center",
+                width: "100%",
+                flexDirection: "row"
             } as ViewStyle,
         },
         largeHeaderText: {
             light: {
-                textAlign: 'left', 
-                fontSize: 36, 
-                color: Colors.light.light, 
+                textAlign: 'left',
+                fontSize: 36,
+                color: Colors.light.light,
                 position: 'absolute',
                 fontFamily: "montserrat-semibold",
-                bottom: 16, 
-                marginLeft: 18,
-                marginRight: 18
+                paddingBottom: 10,
+                paddingTop: 5,
+                marginLeft: 10,
+                marginRight: 10
             } as ViewStyle,
             dark: {
-                textAlign: 'left', 
-                fontSize: 36, 
-                color: Colors.light.light, 
+                textAlign: 'left',
+                fontSize: 36,
+                color: Colors.light.light,
                 position: 'absolute',
                 fontFamily: "montserrat-semibold",
-                bottom: 16, 
-                marginLeft: 18,
-                marginRight: 18
+                paddingBottom: 10,
+                paddingTop: 5,
+                marginLeft: 10,
+                marginRight: 10
+            } as ViewStyle,
+        },
+        categories: {
+            light: {
+                fontSize: 15,
+                color: Colors.light.primary,
+                fontFamily: "montserrat-semibold",
+            } as ViewStyle,
+            dark: {
+                fontSize: 15,
+                color: Colors.light.primary,
+                fontFamily: "montserrat-semibold",
+            } as ViewStyle,
+        },
+        author: {
+            light: {
+                fontSize: 13,
+                color: Colors.light.light,
+                fontFamily: "montserrat-regular",
+            } as ViewStyle,
+            dark: {
+                fontSize: 13,
+                color: Colors.light.light,
+                fontFamily: "montserrat-regular",
+            } as ViewStyle,
+        },
+        date: {
+            light: {
+                fontSize: 13,
+                color: Colors.light.light,
+                fontFamily: "montserrat-regular",
+            } as ViewStyle,
+            dark: {
+                fontSize: 13,
+                color: Colors.light.light,
+                fontFamily: "montserrat-regular",
             } as ViewStyle,
         },
         scrollContainer: {
@@ -103,17 +149,20 @@ export default {
         container: {
             light: {
                 flex: 1,
+                backgroundColor: Colors.light.background,
             } as ViewStyle,
             dark: {
                 flex: 1,
+                backgroundColor: Colors.dark.background,
             } as ViewStyle,
         },
         image: {
             flex: 1,
-            justifyContent: "flex-start",
             backgroundColor: Colors.light.dark,
             borderBottomLeftRadius: 30,
             borderBottomRightRadius: 30,
+            justifyContent: "flex-end",
+            flexDirection: "column"
         } as ViewStyle,
         imageStyle: {
             opacity: 0.6,
