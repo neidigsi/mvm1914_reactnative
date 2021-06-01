@@ -11,7 +11,6 @@ import { TabBar } from 'react-native-tab-view';
 import Header from '../header/Header';
 import Colors from '../../constants/Colors';
 
-
 const initialLayout = { width: Dimensions.get('window').width };
 
 const TabLayout = ({ title, scene, state, setState }: any): JSX.Element => {
@@ -61,7 +60,7 @@ const TabLayout = ({ title, scene, state, setState }: any): JSX.Element => {
     return <>{
         state !== undefined && state.routes !== undefined && state.routes.length > 0 &&
         <CollapsibleHeaderTabView
-            renderScrollHeader={() => <Header title={title} back={false}  />}
+            renderScrollHeader={() => <Header title={title} back={false} />}
             navigationState={state}
             renderScene={scene}
             onIndexChange={handleIndexChange}

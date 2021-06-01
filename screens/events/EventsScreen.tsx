@@ -2,9 +2,9 @@ import * as React from 'react';
 import { useState } from 'react';
 import { HScrollView } from 'react-native-head-tab-view';
 import { SceneMap } from 'react-native-tab-view';
-import TabLayout from '../components/tabs/TabLayout';
-import { View } from '../components/Themed';
-import Style from '../constants/Style';
+import TabLayout from '../../components/tabs/TabLayout';
+import { View } from '../../components/Themed';
+import Style from '../../constants/Style';
 
 const AllRoute = () => (
   <HScrollView index={0}>

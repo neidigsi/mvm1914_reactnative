@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import GalleriesScreen from '../screens/GalleriesScreen';
+import GalleriesScreen from '../screens/galleries/GalleriesScreen';
 import { GalleriesParamList } from '../types';
 
 const GalleriesStack = createStackNavigator<GalleriesParamList>();
