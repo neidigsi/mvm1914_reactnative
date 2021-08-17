@@ -23,7 +23,7 @@ const PostsNavigator = () => {
                 options={{
                     headerShown: false
                 }}
-                />
+            />
         </PostsStack.Navigator>
     );
 }

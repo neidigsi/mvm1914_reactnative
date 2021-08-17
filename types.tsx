@@ -25,4 +25,5 @@ export type GalleriesParamList = {
 
 export type EventsParamList = {
   EventsScreen: undefined;
+  SingleEventScreen: undefined;
 };

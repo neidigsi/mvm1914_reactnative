@@ -21,7 +21,7 @@ const EventListItem = ({
     const colorScheme = useColorScheme();
 
     return (
-        <TouchableOpacity onPress={() => navigation.navigate("SinglePostScreen", { id: id, categories: categories })} >
+        <TouchableOpacity onPress={() => navigation.navigate("SingleEventScreen", { id: id, categories: categories })} >
             <View style={Style.listItem.item[colorScheme]}>
                 <ImageBackground
                     source={{ uri: thumbnailLink.toString() }}
@@ -75,7 +75,7 @@ const EventListItem = ({
                                 <Moment element={Text} style={Style.listItem.date} format="DD.MM.YYYY | HH:mm U\hr" date={startDate} />
                             }
                         </View>
-                        <TouchableOpacity style={Style.listItem.button} onPress={() => navigation.navigate("SinglePostScreen", { id: id, categories: categories })} >
+                        <TouchableOpacity style={Style.listItem.button} onPress={() => navigation.navigate("SingleEventScreen", { id: id, categories: categories })} >
                             <Text style={Style.listItem.buttonText}>Ansehen</Text>
                         </TouchableOpacity>
                     </View>
