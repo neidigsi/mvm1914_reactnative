@@ -246,7 +246,13 @@ export default {
             paddingTop: 2,
             paddingRight: 10,
             color: Colors.light.light,
-        } as ViewStyle,
+        } as any,
+        dateWithoutSidePadding: {
+            fontFamily: "montserrat-regular",
+            fontSize: 12,
+            paddingTop: 2,
+            color: Colors.light.light,
+        } as any,
 
     },
     transparentView: {
