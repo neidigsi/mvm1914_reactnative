@@ -21,6 +21,7 @@ export type PostsParamList = {
 
 export type GalleriesParamList = {
   GalleriesScreen: undefined;
+  SingleGalleryScreen: undefined;
 };
 
 export type EventsParamList = {

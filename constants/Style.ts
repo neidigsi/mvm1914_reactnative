@@ -3,7 +3,7 @@ import { Dimensions, ImageStyle, ViewStyle } from "react-native";
 import Colors from "./Colors";
 
 const transparent = "rgba(0,0,0,0.0)";
-const { width: SCREEN_WIDTH } = Dimensions.get("screen")
+const { width: SCREEN_WIDTH } = Dimensions.get("screen");
 
 
 export default {

@@ -56,7 +56,7 @@ interface Region {
     longitudeDelta: number
 }
 
-const SingleEventScreen = ({ navigation, route }: any) => {
+const SingleGalleryScreen = ({ navigation, route }: any) => {
     const [scrollY, setScrollY] = useState(new Animated.Value(0));
     const [loading, setLoading] = useState<boolean>(true);
     const [event, setEvent] = useState<IEvent>();
@@ -340,4 +340,4 @@ const SingleEventScreen = ({ navigation, route }: any) => {
     );
 }
 
-export default SingleEventScreen;
+export default SingleGalleryScreen;
