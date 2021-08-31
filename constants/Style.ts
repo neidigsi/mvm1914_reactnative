@@ -7,6 +7,42 @@ const { width: SCREEN_WIDTH } = Dimensions.get("screen")
 
 
 export default {
+    eventsPost: {
+        footer: {
+            alignItems: "center", 
+            justifyContent: "center", 
+            height: 600, 
+            backgroundColor: Colors.light.primary, 
+            borderTopLeftRadius: 30, 
+            borderTopRightRadius: 30
+        } as ViewStyle,
+        footerButtonMenu: { 
+            alignItems: "center", 
+            justifyContent: "center", 
+            flexDirection: "row", 
+            height: 40, 
+            backgroundColor: Colors.light.primary, 
+            borderTopLeftRadius: 30, 
+            borderTopRightRadius: 30 
+    } as ViewStyle,
+        maps: {
+            height: 500,
+            width: SCREEN_WIDTH,
+            flex: 1,
+            borderRadius: 30
+        } as ViewStyle,
+        button: {
+            flex: 1,
+            marginBottom: 0,
+            marginRight: 15,
+            paddingTop: 5,
+            paddingBottom: 5,
+            height: 30,
+            width: SCREEN_WIDTH / 2,
+            backgroundColor: Colors.light.secondary,
+            borderRadius: 15,
+        } as ViewStyle,
+    },
     singlePost: {
         header: {
             light: {
@@ -136,14 +172,6 @@ export default {
                 fontSize: 13,
                 color: Colors.light.light,
                 fontFamily: "montserrat-regular",
-            } as ViewStyle,
-        },
-        scrollContainer: {
-            light: {
-                padding: 16
-            } as ViewStyle,
-            dark: {
-                padding: 16
             } as ViewStyle,
         },
         container: {

@@ -154,7 +154,7 @@ const SinglePostScreen = ({ navigation, route }: any) => {
                             </ImageBackground>
                         </Animated.View>
                         <ScrollView
-                            contentContainerStyle={[Style.singlePost.scrollContainer[colorScheme], { paddingTop: HEADER_EXPANDED_HEIGHT }]}
+                            contentContainerStyle={{ paddingTop: HEADER_EXPANDED_HEIGHT }}
                             onScroll={Animated.event(
                                 [
                                     {
@@ -168,7 +168,9 @@ const SinglePostScreen = ({ navigation, route }: any) => {
                                 { useNativeDriver: false })
                             }
                             scrollEventThrottle={16}>
-                            <HTML source={{ html: post !== undefined && post.content !== undefined ? post.content : "<p></p>" }} contentWidth={contentWidth} />
+                            <View style={{ padding: 16 }} >
+                                <HTML source={{ html: post !== undefined && post.content !== undefined ? post.content : "<p></p>" }} contentWidth={contentWidth} />
+                            </View>
                             <View style={{ height: 40 }}></View>
                         </ScrollView>
                     </View >
