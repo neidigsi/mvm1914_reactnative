@@ -116,23 +116,10 @@ const SingleEventScreen = ({ navigation, route }: any) => {
 
     const addToCalendar = async (title: string) => {
         const eventConfig = {
-          title
+            title
         };
-    
-        AddCalendarEvent.presentEventCreatingDialog(eventConfig)
-          .then((eventId: any) => {
-            //handle success (receives event id) or dismissing the modal (receives false)
-            if (eventId) {
-              console.warn(eventId);
-            } else {
-              console.warn('dismissed');
-            }
-          })
-          .catch((error: string) => {
-            // handle error such as when user rejected permissions
-            console.warn(error);
-          });
-      };
+
+    };
 
     const headerHeight = scrollY.interpolate({
         inputRange: [0, HEADER_EXPANDED_HEIGHT - HEADER_COLLAPSED_HEIGHT],
@@ -339,10 +326,13 @@ const SingleEventScreen = ({ navigation, route }: any) => {
                                         region={region}
                                         onRegionChange={onRegionChange}
                                     >
-                                        <Marker
-                                            coordinate={{ latitude: parseFloat(event.location.latitude), longitude: parseFloat(event.location.longitude) }}
-                                            title={event.location.name !== undefined ? event.location.name : ""}
-                                        />
+                                        {
+                                            event.location !== undefined && event.location.latitude !== undefined && event.location.longitude !== undefined &&
+                                            <Marker
+                                                coordinate={{ latitude: parseFloat(event.location.latitude), longitude: parseFloat(event.location.longitude) }}
+                                                title={event.location.name !== undefined ? event.location.name : ""}
+                                            />
+                                        }
                                     </MapView>
                                 </View>
                             }
