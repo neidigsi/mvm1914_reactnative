@@ -4,9 +4,22 @@ import Colors from "./Colors";
 
 const transparent = "rgba(0,0,0,0.0)";
 const { width: SCREEN_WIDTH } = Dimensions.get("screen");
+const { width: WINDOW_WIDTH } = Dimensions.get("window");
 
 
 export default {
+    galleryPost: {
+        galleryPreview: {
+            width: (WINDOW_WIDTH / 3) - 10,
+            height: (WINDOW_WIDTH / 3) - 10,
+            margin: 5,
+            borderTopLeftRadius: 10, 
+            borderTopRightRadius: 10,
+            borderBottomLeftRadius: 10,
+            borderBottomRightRadius: 10,
+            backgroundColor: transparent
+        } as ImageStyle,
+    },
     eventsPost: {
         footer: {
             alignItems: "center", 

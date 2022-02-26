@@ -33,7 +33,7 @@ const GalleryListItem = ({
                     </Text>
                     <View style={{ flexDirection: 'row', backgroundColor: transparent, alignItems: "flex-end", flex: 1, marginBottom: 15 }}>
                         <View style={{ backgroundColor: transparent, width: "70%" }}/>
-                        <TouchableOpacity style={Style.listItem.button} onPress={() => navigation.navigate("SingleGalleryScreen", { id: id })} >
+                        <TouchableOpacity style={Style.listItem.button} onPress={() => navigation.navigate("SingleGalleryScreen", { id: id, year: year})} >
                             <Text style={Style.listItem.buttonText}>Ansehen</Text>
                         </TouchableOpacity>
                     </View>
