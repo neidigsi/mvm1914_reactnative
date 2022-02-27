@@ -9,7 +9,7 @@ import Colors from '../../../constants/Colors';
 import useColorScheme from '../../../hooks/useColorScheme';
 import Style from '../../../constants/Style';
 
-const GalleryList = ({ year, galleries, loading, navigation }: any) => {
+const GalleryList = ({ index, year, galleries, loading, navigation }: any) => {
     const colorScheme = useColorScheme();
 
     const renderItem = ({ item }: any) => {
@@ -35,14 +35,19 @@ const GalleryList = ({ year, galleries, loading, navigation }: any) => {
     };
 
     return (
-        <HFlatList
-            keyExtractor={(item, index) => index.toString()}
-            index={year}
-            data={galleries}
-            initialNumToRender={2}
-            renderItem={renderItem}
-            ListFooterComponent={getSpinner}
-        />
+        <>
+            <HFlatList
+                keyExtractor={(item, index) => index.toString()}
+                index={index}
+                data={galleries}
+                initialNumToRender={5}
+                renderItem={renderItem}
+                ListFooterComponent={getSpinner}
+            />
+            <View style={{
+                height: 60
+            }} />
+        </>
     );
 };
 

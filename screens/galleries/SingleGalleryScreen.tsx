@@ -13,7 +13,7 @@ import {
     Image
 } from 'react-native';
 import { View } from '../../components/Themed';
-import { ChevronLeft} from "react-native-feather";
+import { ChevronLeft } from "react-native-feather";
 import Style from '../../constants/Style';
 import useColorScheme from '../../hooks/useColorScheme';
 import Colors from '../../constants/Colors';
@@ -110,10 +110,10 @@ const SingleGalleryScreen = ({ navigation, route }: any) => {
                                 <Gallery
                                     data={gallery.imageLinks}
                                     initialIndex={imageId}
-                                    onSwipeToClose={() => { 
+                                    onSwipeToClose={() => {
                                         setSingleImageView(false);
                                         setScrollY(new Animated.Value(0));
-                                     }}
+                                    }}
                                     onIndexChange={(newIndex) => {
                                         setImageId(newIndex);
                                     }}
@@ -148,6 +148,8 @@ const SingleGalleryScreen = ({ navigation, route }: any) => {
                                                         </>
                                                     }
                                                 </Animated.Text>
+                                                <TouchableOpacity style={{ flex: 1, width: "10%", alignItems: "center", justifyContent: "center" }} >
+                                                </TouchableOpacity>
                                             </Animated.View>
                                             {/* 
                                                 Large header if the view is scrolled up
@@ -174,6 +176,8 @@ const SingleGalleryScreen = ({ navigation, route }: any) => {
                                                         {"\n\n"}
                                                         <Animated.View style={{ width: contentWidth - 20, flexDirection: "row", justifyContent: 'space-around', backgroundColor: Colors[colorScheme].transparent, opacity: heroTitleOpacity }}>
                                                         </Animated.View>
+                                                        <TouchableOpacity style={{ flex: 1, width: "10%", alignItems: "flex-end", justifyContent: "center" }} >
+                                                        </TouchableOpacity>
                                                     </>
                                                 }
                                             </Animated.Text>

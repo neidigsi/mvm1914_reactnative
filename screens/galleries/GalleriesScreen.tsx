@@ -50,10 +50,10 @@ const GalleriesScreen = ({ navigation }: any) => {
         if (galleries !== undefined && galleries.length > 0) {
             let filteredYears = galleries.filter(gallery => gallery.year === route.title);
             if (filteredYears !== undefined && filteredYears.length >= 1) {
-                return <GalleryList index={route.key} navigation={navigation} year={route.title} galleries={filteredYears[0].galleries} loading={loading} />;
+                return <GalleryList index={parseInt(route.key)} navigation={navigation} year={route.title} galleries={filteredYears[0].galleries} loading={loading} />;
             }
         }
-        return <GalleryList index={route.key} navigation={navigation} year={route.title} galleries={[]} loading={loading} />;
+        return <GalleryList index={parseInt(route.key)} navigation={navigation} year={route.title} galleries={[]} loading={loading} />;
 
     };
 

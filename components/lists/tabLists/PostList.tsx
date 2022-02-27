@@ -14,7 +14,14 @@ const PostList = ({ index, posts, loading, navigation }: any) => {
 
     const renderItem = ({ item }: any) => {
         return (
-            <PostListItem navigation={navigation} id={item.id} title={item.title} author={item.author} date={item.date} categories={item.categories} thumbnailLink={item.thumbnailLink} />
+            <PostListItem
+                navigation={navigation}
+                id={item.id}
+                title={item.title}
+                author={item.author}
+                date={item.date}
+                categories={item.categories}
+                thumbnailLink={item.thumbnailLink} />
         )
     }
 
@@ -30,14 +37,19 @@ const PostList = ({ index, posts, loading, navigation }: any) => {
     };
 
     return (
-        <HFlatList
-            keyExtractor={(item, index) => index.toString()}
-            index={index}
-            data={posts}
-            initialNumToRender={5}
-            renderItem={renderItem}
-            ListFooterComponent={getSpinner}
-        />
+        <>
+            <HFlatList
+                keyExtractor={(item, index) => index.toString()}
+                index={index}
+                data={posts}
+                initialNumToRender={5}
+                renderItem={renderItem}
+                ListFooterComponent={getSpinner}
+            />
+            <View style={{
+                height: 60
+            }} />
+        </>
     );
 };
 

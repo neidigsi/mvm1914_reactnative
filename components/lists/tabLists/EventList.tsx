@@ -39,14 +39,19 @@ const EventList = ({ index, events, loading, navigation }: any) => {
     };
 
     return (
-        <HFlatList
-            keyExtractor={(item, index) => index.toString()}
-            index={index}
-            data={events}
-            initialNumToRender={5}
-            renderItem={renderItem}
-            ListFooterComponent={getSpinner}
-        />
+        <>
+            <HFlatList
+                keyExtractor={(item, index) => index.toString()}
+                index={index}
+                data={events}
+                initialNumToRender={5}
+                renderItem={renderItem}
+                ListFooterComponent={getSpinner}
+            />
+            <View style={{
+                height: 60
+            }} />
+        </>
     );
 };
 

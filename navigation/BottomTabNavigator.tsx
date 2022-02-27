@@ -12,34 +12,26 @@ import GalleriesNavigator from './GalleriesNavigator';
 import { BottomTabParamList } from '../types';
 import { Text, View } from '../components/Themed';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Style from '../constants/Style';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
-  const [tab, setTab] = useState("posts");
+  const [tab, setTab] = useState<String>("posts");
+  const [hideNavBar, setHideNavBar] = useState<Boolean>(false)
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: Colors[colorScheme].light }}>
+    <SafeAreaView edges={[]} style={
+        Style.saveArea.saveArea
+    }>
       <BottomTab.Navigator
         initialRouteName="Posts"
-        tabBarOptions={{
-          activeTintColor: Colors[colorScheme].dark,
-          inactiveTintColor: Colors[colorScheme].grey,
-          showLabel: false,
-          safeAreaInsets: { bottom: 0 },
-          tabStyle: {
-            paddingVertical: -10,
-          },
-          style: {
-            height: 50,
-            backgroundColor: Colors[colorScheme].light,
-            borderTopLeftRadius: 30,
-            borderTopRightRadius: 30,
-            position: 'absolute',
-            elevation: 0
-          },
-        }}>
+        tabBarOptions={
+          hideNavBar ?
+            Style.tabs.tabBarOptionsHidden :
+            Style.tabs.tabBarOptions
+        }>
 
         <BottomTab.Screen
           name="Posts"
@@ -63,6 +55,7 @@ export default function BottomTabNavigator() {
               </View>,
           }}
         />
+
         <BottomTab.Screen
           name="Events"
           component={EventsNavigator}
