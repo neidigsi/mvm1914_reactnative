@@ -18,6 +18,7 @@ const TabLayout = ({ title, scene, state, setState }: any): JSX.Element => {
 
     const handleIndexChange = (i: number) => {
         let newState = { ...state };
+        console.log(i)
         newState["index"] = i;
         setState(newState);
     }

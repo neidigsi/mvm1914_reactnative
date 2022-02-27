@@ -1,4 +1,5 @@
 
+import { BottomTabBarOptions } from "@react-navigation/bottom-tabs";
 import { Dimensions, ImageStyle, ViewStyle } from "react-native";
 import Colors from "./Colors";
 
@@ -13,31 +14,31 @@ export default {
             width: (WINDOW_WIDTH / 3) - 10,
             height: (WINDOW_WIDTH / 3) - 10,
             margin: 5,
-            borderTopLeftRadius: 10, 
+            borderTopLeftRadius: 10,
             borderTopRightRadius: 10,
             borderBottomLeftRadius: 10,
             borderBottomRightRadius: 10,
             backgroundColor: transparent
         } as ImageStyle,
     },
-    eventsPost: {
+    eventsPost: {
         footer: {
-            alignItems: "center", 
-            justifyContent: "center", 
-            height: 600, 
-            backgroundColor: Colors.light.primary, 
-            borderTopLeftRadius: 30, 
+            alignItems: "center",
+            justifyContent: "center",
+            height: 600,
+            backgroundColor: Colors.light.primary,
+            borderTopLeftRadius: 30,
             borderTopRightRadius: 30
         } as ViewStyle,
-        footerButtonMenu: { 
-            alignItems: "center", 
-            justifyContent: "center", 
-            flexDirection: "row", 
-            height: 40, 
-            backgroundColor: Colors.light.primary, 
-            borderTopLeftRadius: 30, 
-            borderTopRightRadius: 30 
-    } as ViewStyle,
+        footerButtonMenu: {
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "row",
+            height: 40,
+            backgroundColor: Colors.light.primary,
+            borderTopLeftRadius: 30,
+            borderTopRightRadius: 30
+        } as ViewStyle,
         maps: {
             height: 500,
             width: SCREEN_WIDTH,
@@ -379,7 +380,45 @@ export default {
             width: '80%',
         } as ViewStyle,
     },
+    saveArea: {
+        saveArea: { 
+            flex: 1, 
+            backgroundColor: Colors.light.light 
+        } as ViewStyle,
+        saveAreaHidden: { 
+        } as ViewStyle,
+    },
     tabs: {
+        tabBarOptions: {
+            activeTintColor: Colors.light.dark,
+            inactiveTintColor: Colors.light.grey,
+            showLabel: false,
+            safeAreaInsets: { bottom: 0 },
+            tabStyle: {
+                paddingVertical: -10,
+            },
+            style: {
+                height: 50,
+                backgroundColor: Colors.light.light,
+                borderTopLeftRadius: 30,
+                borderTopRightRadius: 30,
+                position: 'absolute',
+                elevation: 0
+            },
+        } as BottomTabBarOptions,
+        tabBarOptionsHidden: {
+            activeTintColor: transparent,
+            inactiveTintColor: transparent,
+            safeAreaInsets: { bottom: 0 },
+            style: {
+                height: 0,
+                backgroundColor: transparent,
+                borderTopLeftRadius: 30,
+                borderTopRightRadius: 30,
+                position: 'absolute',
+                elevation: 0
+            },
+        } as BottomTabBarOptions,
         container: {
             flex: 1,
             backgroundColor: Colors.light.background

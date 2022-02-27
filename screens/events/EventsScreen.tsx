@@ -53,6 +53,9 @@ const EventsScreen = ({ navigation }: any) => {
   // Fetch events from rest-api
   const fetchEvents = async () => {
     const data = await http(`${API}/event`, "GET", {})
+    data.sort((a: any, b: any) => {
+      return a.startDate < b.startDate ? -1 : 1;
+    });
     return data;
   }
 
@@ -67,11 +70,11 @@ const EventsScreen = ({ navigation }: any) => {
       case "hem":
         return <EventList index={3} navigation={navigation} events={events.filter(event => event.categories.includes("Horsch e-mol(l)"))} loading={loading} />;
       case "jb":
-        return <EventList index={3} navigation={navigation} events={events.filter(event => event.categories.includes("Juniorband"))} loading={loading} />;
+        return <EventList index={4} navigation={navigation} events={events.filter(event => event.categories.includes("Juniorband"))} loading={loading} />;
       case "fg":
-        return <EventList index={3} navigation={navigation} events={events.filter(event => event.categories.includes("Blockflötengruppen"))} loading={loading} />;
+        return <EventList index={5} navigation={navigation} events={events.filter(event => event.categories.includes("Blockflötengruppen"))} loading={loading} />;
       case "ff":
-        return <EventList index={3} navigation={navigation} events={events.filter(event => event.categories.includes("Musikalische Frühförderung"))} loading={loading} />;
+        return <EventList index={6} navigation={navigation} events={events.filter(event => event.categories.includes("Musikalische Frühförderung"))} loading={loading} />;
     }
   };
 
