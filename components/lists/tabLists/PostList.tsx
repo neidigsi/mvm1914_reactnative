@@ -2,12 +2,12 @@
 import React from 'react';
 import { FlatList } from 'react-native';
 import { ActivityIndicator } from 'react-native';
-
 import PostListItem from '../listItems/PostListItem';
 import { View } from '../../Themed';
 import Colors from '../../../constants/Colors';
 import useColorScheme from '../../../hooks/useColorScheme';
 import Style from '../../../constants/Style';
+import { Tabs } from 'react-native-collapsible-tab-view'
 
 const PostList = ({ index, posts, loading, navigation }: any) => {
     const colorScheme = useColorScheme();
@@ -38,9 +38,9 @@ const PostList = ({ index, posts, loading, navigation }: any) => {
 
     return (
         <>
-            <FlatList
+            <Tabs.FlatList
                 keyExtractor={(item, index) => index.toString()}
-                //index={index}
+                index={index}
                 data={posts}
                 initialNumToRender={5}
                 renderItem={renderItem}

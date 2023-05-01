@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { API } from "@env";
 import TabLayout from '../../components/tabs/TabLayout';
-import PostList from '../../components/lists/tabLists/PostList';
 import { http } from '../../networking/HttpRequest';
 
 interface IPost {
@@ -39,28 +38,17 @@ const PostsScreen = ({ navigation }: any) => {
 
   // Fetch posts from rest-api
   const fetchPosts = async () => {
-    const data = await http(`${API}/post`, "GET", {})
+    const data = await http(`${API}/post`, "GET", {});
     return data;
   }
-
-  const renderScene = ({ route, jumpTo }: any) => {
-    switch (route.key) {
-      case "all":
-        return <PostList index={0} navigation={navigation} posts={posts} loading={loading} />;
-      case "go":
-        return <PostList index={1} navigation={navigation} posts={posts.filter(post => post.categories.includes("Großes Orchester"))} loading={loading} />;
-      case "j":
-        return <PostList index={2} navigation={navigation} posts={posts.filter(post => post.categories.includes("Jugend"))} loading={loading} />;
-      case "hem":
-        return <PostList index={3} navigation={navigation} posts={posts.filter(post => post.categories.includes("Horsch e-mol(l)"))} loading={loading} />;
-    }
-  };
 
   return (
       <TabLayout
         title="Berichte"
-        scene={renderScene}
         state={state}
+        navigation={navigation}
+        posts={posts}
+        loading={loading}
         setState={setState}
       />
   );
