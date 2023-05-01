@@ -23,15 +23,17 @@ export default function BottomTabNavigator() {
 
   return (
     <SafeAreaView edges={[]} style={
-        Style.saveArea.saveArea
+      Style.saveArea.saveArea
     }>
       <BottomTab.Navigator
         initialRouteName="Posts"
-        /*tabBarOptions={
+        screenOptions={
           hideNavBar ?
             Style.tabs.tabBarOptionsHidden :
             Style.tabs.tabBarOptions
-        }*/>
+        }
+        safeAreaInsets={{ bottom: 0 }}
+      >
 
         <BottomTab.Screen
           name="Posts"

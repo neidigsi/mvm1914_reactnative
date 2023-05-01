@@ -389,14 +389,13 @@ export default {
     },
     tabs: {
         tabBarOptions: {
-            activeTintColor: Colors.light.dark,
-            inactiveTintColor: Colors.light.grey,
-            showLabel: false,
-            safeAreaInsets: { bottom: 0 },
+            tabBarActiveTintColor: Colors.light.dark,
+            tabBarInactiveTintColor: Colors.light.grey,
+            tabBarShowLabel: false,
             tabStyle: {
                 paddingVertical: -10,
             },
-            style: {
+            tabBarStyle: {
                 height: 50,
                 backgroundColor: Colors.light.light,
                 borderTopLeftRadius: 30,
@@ -406,10 +405,9 @@ export default {
             },
         } as any,
         tabBarOptionsHidden: {
-            activeTintColor: transparent,
-            inactiveTintColor: transparent,
-            safeAreaInsets: { bottom: 0 },
-            style: {
+            tabBarActiveTintColor: transparent,
+            tabBarInactiveTintColor: transparent,
+            tabBarStyle: {
                 height: 0,
                 backgroundColor: transparent,
                 borderTopLeftRadius: 30,
