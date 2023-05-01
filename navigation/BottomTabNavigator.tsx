@@ -54,7 +54,7 @@ export default function BottomTabNavigator() {
                     opacity: tab !== undefined && tab === "posts" ? 1 : 0
                   }} />
                 </View>
-              </View>,
+              </View>
           }}
         />
 

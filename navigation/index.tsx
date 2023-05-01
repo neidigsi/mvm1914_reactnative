@@ -4,7 +4,6 @@ import * as React from 'react';
 import { ColorSchemeName } from 'react-native';
 import { RootStackParamList } from '../types';
 import BottomTabNavigator from './BottomTabNavigator';
-import LinkingConfiguration from './LinkingConfiguration';
 import useCachedResources from '../hooks/useCachedResources';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
@@ -18,7 +17,6 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
   const cachedResources = useCachedResources();
   return (
     <NavigationContainer
-      //linking={LinkingConfiguration}
       theme={DefaultTheme}>
       <RootNavigator />
     </NavigationContainer>

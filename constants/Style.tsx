@@ -403,6 +403,7 @@ export default {
                 position: 'absolute',
                 elevation: 0
             },
+            headerShown: false,
         } as any,
         tabBarOptionsHidden: {
             tabBarActiveTintColor: transparent,
@@ -415,6 +416,7 @@ export default {
                 position: 'absolute',
                 elevation: 0
             },
+            headerShown: false,
         } as any,
         container: {
             flex: 1,
