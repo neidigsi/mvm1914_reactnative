@@ -11,7 +11,7 @@
  * @param {JSON} body The pody of the request (ignored for "GET"-requests)
  * @returns The result of the api-request. It also contains the response-status as attribute "statusCode".
  */
- export async function http(path: string, method: string, body: any) {
+export async function http(path: string, method: string, body: any) {
     let response;
     if (method === "GET") {
         // Create request without body if it is a get-request

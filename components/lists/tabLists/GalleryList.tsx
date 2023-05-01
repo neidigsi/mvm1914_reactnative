@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { HFlatList } from 'react-native-head-tab-view'
+import { FlatList } from 'react-native';
 import { ActivityIndicator } from 'react-native';
 
 import GalleryListItem from '../listItems/GalleryListItem';
@@ -36,9 +36,9 @@ const GalleryList = ({ index, year, galleries, loading, navigation }: any) => {
 
     return (
         <>
-            <HFlatList
+            <FlatList
                 keyExtractor={(item, index) => index.toString()}
-                index={index}
+                //index={index}
                 data={galleries}
                 initialNumToRender={5}
                 renderItem={renderItem}

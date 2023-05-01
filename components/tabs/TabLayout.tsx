@@ -6,9 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import Style from '../../constants/Style';
 import useColorScheme from '../../hooks/useColorScheme';
-import { CollapsibleHeaderTabView } from 'react-native-tab-view-collapsible-header'
+//import { CollapsibleHeaderTabView } from 'react-native-tab-view-collapsible-header'
 import { TabBar } from 'react-native-tab-view';
-import Header from '../header/Header';
+//import Header from '../header/Header';
 import Colors from '../../constants/Colors';
 
 const initialLayout = { width: Dimensions.get('window').width };
@@ -60,14 +60,15 @@ const TabLayout = ({ title, scene, state, setState }: any): JSX.Element => {
 
     return <>{
         state !== undefined && state.routes !== undefined && state.routes.length > 0 &&
-        <CollapsibleHeaderTabView
+        /*<CollapsibleHeaderTabView
             renderScrollHeader={() => <Header title={title} back={false} />}
             navigationState={state}
             renderScene={scene}
             onIndexChange={handleIndexChange}
             initialLayout={initialLayout}
             renderTabBar={renderTabBar}
-        />
+        />*/
+        <></>
     }</>;
 }
 

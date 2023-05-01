@@ -1,11 +1,10 @@
 
-import { BottomTabBarOptions } from "@react-navigation/bottom-tabs";
-import { Dimensions, ImageStyle, ViewStyle } from "react-native";
+import { Dimensions, ImageStyle, ViewStyle } from 'react-native';
 import Colors from "./Colors";
 
-const transparent = "rgba(0,0,0,0.0)";
-const { width: SCREEN_WIDTH } = Dimensions.get("screen");
-const { width: WINDOW_WIDTH } = Dimensions.get("window");
+const transparent = 'rgba(0,0,0,0.0)';
+const { width: SCREEN_WIDTH } = Dimensions.get('screen');
+const { width: WINDOW_WIDTH } = Dimensions.get('window');
 
 
 export default {
@@ -405,7 +404,7 @@ export default {
                 position: 'absolute',
                 elevation: 0
             },
-        } as BottomTabBarOptions,
+        } as any,
         tabBarOptionsHidden: {
             activeTintColor: transparent,
             inactiveTintColor: transparent,
@@ -418,7 +417,7 @@ export default {
                 position: 'absolute',
                 elevation: 0
             },
-        } as BottomTabBarOptions,
+        } as any,
         container: {
             flex: 1,
             backgroundColor: Colors.light.background

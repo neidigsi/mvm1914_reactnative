@@ -18,7 +18,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
   const cachedResources = useCachedResources();
   return (
     <NavigationContainer
-      linking={LinkingConfiguration}
+      //linking={LinkingConfiguration}
       theme={DefaultTheme}>
       <RootNavigator />
     </NavigationContainer>

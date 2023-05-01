@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { HFlatList } from 'react-native-head-tab-view'
+import { FlatList } from 'react-native';
 import { ActivityIndicator } from 'react-native';
 
 import PostListItem from '../listItems/PostListItem';
@@ -38,9 +38,9 @@ const PostList = ({ index, posts, loading, navigation }: any) => {
 
     return (
         <>
-            <HFlatList
+            <FlatList
                 keyExtractor={(item, index) => index.toString()}
-                index={index}
+                //index={index}
                 data={posts}
                 initialNumToRender={5}
                 renderItem={renderItem}

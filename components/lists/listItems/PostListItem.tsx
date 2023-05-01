@@ -5,7 +5,7 @@ import useColorScheme from '../../../hooks/useColorScheme';
 import { ImageBackground, TouchableOpacity } from 'react-native';
 import Moment from 'react-moment';
 
-const transparent = "rgba(0,0,0,0.0)";
+const transparent = 'rgba(0,0,0,0.0)';
 
 const PostListItem = ({ id, navigation, title, date, categories, author, thumbnailLink }: any) => {
     const colorScheme = useColorScheme();

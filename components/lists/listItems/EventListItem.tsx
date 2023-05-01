@@ -5,7 +5,7 @@ import useColorScheme from '../../../hooks/useColorScheme';
 import Moment from 'react-moment';
 import { ImageBackground, TouchableOpacity } from 'react-native';
 
-const transparent = "rgba(0,0,0,0.0)";
+const transparent = 'rgba(0,0,0,0.0)';
 
 const EventListItem = ({
     id,

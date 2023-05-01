@@ -4,7 +4,7 @@ import Style from '../../../constants/Style';
 import useColorScheme from '../../../hooks/useColorScheme';
 import { ImageBackground, TouchableOpacity } from 'react-native';
 
-const transparent = "rgba(0,0,0,0.0)";
+const transparent = 'rgba(0,0,0,0.0)';
 
 const GalleryListItem = ({
     id,

@@ -13,7 +13,7 @@ import {
     useWindowDimensions
 } from 'react-native';
 import { View, Text } from '../../components/Themed';
-import { ChevronLeft, Share as ShareIcon, Navigation, Calendar } from "react-native-feather";
+import { ChevronLeft, Share as ShareIcon, Navigation, Calendar } from 'react-native-feather';
 import Style from '../../constants/Style';
 import useColorScheme from '../../hooks/useColorScheme';
 import Colors from '../../constants/Colors';
@@ -108,7 +108,7 @@ const SingleEventScreen = ({ navigation, route }: any) => {
             const result = await Share.share({
                 message: event !== undefined && event?.title !== undefined && event.url !== undefined ? "Schau dir mal diese Veranstaltung des Musikvereins an: " + event?.title + "\n" + event?.url : "",
             });
-        } catch (error) {
+        } catch (error: any) {
             alert(error.message);
         }
     };

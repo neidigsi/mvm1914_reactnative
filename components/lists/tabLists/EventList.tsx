@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { HFlatList } from 'react-native-head-tab-view'
+import { FlatList } from 'react-native';
 import { ActivityIndicator } from 'react-native';
 
 import EventListItem from '../listItems/EventListItem';
@@ -40,9 +40,9 @@ const EventList = ({ index, events, loading, navigation }: any) => {
 
     return (
         <>
-            <HFlatList
+            <FlatList
                 keyExtractor={(item, index) => index.toString()}
-                index={index}
+                //index={index}
                 data={events}
                 initialNumToRender={5}
                 renderItem={renderItem}

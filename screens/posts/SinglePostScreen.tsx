@@ -58,7 +58,7 @@ const SinglePostScreen = ({ navigation, route }: any) => {
             const result = await Share.share({
                 message: post !== undefined && post?.title !== undefined && post.url !== undefined ? "Schau dir mal diesen Bericht des Musikvereins an: " + post?.title + "\n" + post?.url : "",
             });
-        } catch (error) {
+        } catch (error: any) {
             alert(error.message);
         }
     };
